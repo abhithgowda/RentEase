@@ -1,0 +1,26 @@
+{
+  "name": "rentease",
+  "version": "1.0.0",
+  "description": "Platform to manage your property and tenant information",
+  "main": "main.py",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Achinthya18/RentEase.git"
+  },
+  "keywords": [
+    "flask",
+    "python",
+    "routing",
+    "template",
+    "jinja2",
+    "blueprints",
+    "mysql-connector"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+  }
+}

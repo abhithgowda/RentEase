@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="winter">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RentEase</title>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='logo.ico') }}">
+  <link href="/static/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="/static/3.4.1.1.js"></script>
+</head>
+{% include "navbar1.html" %}
+<body>
+
+  <a class="btn btn-outline btn-primary m-3" href="/propertyform" >
+    Add Property
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 8V16M16 12L8 12" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round"
+        stroke-linejoin="round" />
+      <path
+        d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z"
+        stroke="#2563EB" stroke-width="1.5" />
+    </svg></a>
+    <div class="property-container">
+      {% for property in properties %}
+      <div class="card lg:card-side bg-base-100 shadow-xl mr-16 ml-16 mt-10 mb-10">
+        <figure>
+          <img src="{{ url_for('static', filename='property.jpeg') }}" alt="Album" class="h-80 w-140"/>
+      </figure>
+      
+        <div class="card-body">
+          <h2 class="card-title">{{ property[1]}}</h2>
+          <p>Located at: {{ property[3] }}, {{ property[4] }}, {{ property[5] }}</p>
+          <div class="card-actions justify-end">
+            <a class="btn btn-outline btn-primary" href="/{{ property[0] }}/tenantpage">See Tenants</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+</body>
+
+</html>
